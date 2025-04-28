@@ -1,6 +1,30 @@
 {% extends 'base_generic.html' %}
 {% block content %}
 {% load template_filters %}
+<h2>Leaderboard</h2>
+
+<table class="points-table">
+  <tr>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+{% for tipper in tippers %}
+<tr>
+  <td>
+    {{ forloop.counter }}
+  </td>
+  <td>
+    {{ tipper.user }}
+  </td>
+  <td>
+    {{ tipper.points }}
+  </td>
+</tr>
+{% endfor %}
+</table>
+
+
 <div id="upcoming-matches-header-div">
 
   <h2>Upcoming Matches</h2>
@@ -34,28 +58,5 @@
 </div>
 {% endfor %}
 {% endif %}
-<h2>Leaderboard</h2>
-
-<table class="points-table">
-  <tr>
-    <th>Position</th>
-    <th>Name</th>
-    <th>Points</th>
-  </tr>
-{% for tipper in tippers %}
-<tr>
-  <td>
-    {{ forloop.counter }}
-  </td>
-  <td>
-    {{ tipper.user }}
-  </td>
-  <td>
-    {{ tipper.points }}
-  </td>
-</tr>
-{% endfor %}
-</table>
-
 
 {% endblock %}
