@@ -5,7 +5,8 @@
 }
 html {
   --accent-color: #eae6e5;
-  --green: rgb(19, 111, 99);
+  /* --green: rgb(19, 111, 99); */
+  --green: rgb(134, 3, 3);
 }
 body {
   margin: 0;
@@ -186,10 +187,11 @@ a.nav-item:hover {
   border-radius: 10px;
 }
 .submit-picks-button {
-  border: 1px solid var(--accent-color);
-  background-color: var(--accent-color);
+  border: 1px solid var(--green);
+  background-color: var(--green);
   padding: 8px 16px;
   width: max(100px, 100%);
+  color: white;
   display: block;
   text-align: center;
   border-radius: 5px;
@@ -213,7 +215,7 @@ a.nav-item:hover {
   float: left;
   width: 60%;
 }
-#upcoming-matches-header-div input {
+#upcoming-matches-header-div input, #upcoming-matches-header-div a {
   margin-top: 0.83em;
   margin-bottom: 0.83em;
   min-width: 135px;
@@ -386,7 +388,7 @@ a.nav-item:hover {
   .container {
     padding: 0 3px;
   }
-  #upcoming-matches-header-div h2, #upcoming-matches-header-div input {
+  #upcoming-matches-header-div h2, #upcoming-matches-header-div input, #upcoming-matches-header-div a {
     display: block;
     min-width: 100%;
 

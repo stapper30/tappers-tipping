@@ -1,11 +1,13 @@
 {% extends 'base_generic.html' %}
 {% block content %}
 {% load template_filters %}
+<div id="upcoming-matches-header-div">
 
-<a class="submit-picks-button" id="submit-picks-button" href="{% url 'rugby_tipping:pick' %}"
-  style="text-decoration: none;color: black; font-weight:bold">Edit My Picks →</a>
+  <h2>Upcoming Matches</h2>
+  <a class="submit-picks-button" id="top-submit-picks-button" href="{% url 'rugby_tipping:pick' %}"
+    style="text-decoration: none; font-weight:bold">Edit My Picks →</a>
 
-<h2>Upcoming Matches</h2>
+</div>
 {%if upcoming_matches %}
 {% for match in upcoming_matches %}
 <div class="match">
