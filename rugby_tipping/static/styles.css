@@ -1,0 +1,394 @@
+/* general styles*/
+* {
+  box-sizing: border-box;
+  font-family: "Roboto Slab";
+}
+html {
+  --accent-color: #eae6e5;
+  --green: rgb(19, 111, 99);
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.visually-hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(100%); 
+  height: 1px; 
+  overflow: hidden; 
+  position: absolute; 
+  white-space: nowrap; 
+  width: 1px; 
+}
+main,
+header,
+footer {
+  padding: 10px;
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
+}
+.container {
+  width: 100%;
+  background-color: white;
+}
+.black {
+  background-color: var(--green);
+  color: white;
+}
+.black a {
+  color: white;
+}
+main {
+  margin: 0 auto;
+  /* min-height: 70vh; */
+  padding: 0;
+  width: 100%;
+  max-width: 900px;
+}
+
+footer {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+footer ul {
+  list-style-type: none;
+}
+footer ul li a {
+  color: black;
+}
+
+/* Hero styles*/
+.hero > h1 {
+  font-size: 5rem;
+  padding-top: 5rem;
+  width: 100%;
+  color: white;
+  max-width: 900px;
+  margin: auto;
+}
+.hero {
+  background-image: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.7)),
+    url("images/background1.jpg");
+  width: 100vw;
+  min-height: 350px;
+  background-position: 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Form styles*/
+.form-section div {
+  text-align: left;
+}
+.login-form div {
+  margin: 1rem 0;
+}
+.login-form div input,
+.login-button {
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  height: 40px;
+  font-family: "Roboto Slab";
+  max-width: 500px;
+  border: 1px solid var(--accent-color);
+}
+.login-button {
+  background-color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+.login-button:hover {
+  background-color: var(--green);
+  color: white;
+}
+
+/* nav styles*/
+header {
+  display: block;
+  overflow: hidden;
+  padding: max(calc(100vw - 900px), 0);
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+nav {
+  padding: 0;
+  overflow: hidden;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  overflow: hidden;
+}
+
+nav ul li {
+  list-style-type: none;
+  height: inherit;
+  padding: 0;
+  text-align: left;
+}
+
+.nav-item {
+  float: left;
+  margin: 0;
+  display: block;
+  text-decoration: none;
+  text-align: left;
+  width: fit-content;
+  padding: 15px 4rem 15px 0;
+  font-size: 110%;
+  transition: 0.2s ease-in-out;
+}
+.username {
+  float: right;
+  padding: 15px 4rem 15px 0;
+  text-align: right;
+}
+
+a.nav-item:hover {
+  /* border-bottom: 4px solid black; */
+  translate: 0 -4px;
+}
+#nav-bar {
+  padding: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  /* smooth transition */
+}
+
+#nav-bar ul {
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  overflow: hidden;
+}
+
+#nav-bar ul li {
+  list-style-type: none;
+  height: inherit;
+}
+
+.topbar {
+  display: none;
+}
+
+/* match styles*/
+.match {
+  margin-bottom: 15px;
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+.submit-picks-button {
+  border: 1px solid var(--accent-color);
+  background-color: var(--accent-color);
+  padding: 8px 16px;
+  width: max(100px, 100%);
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: "Roboto Slab";
+  transition: 0.2s ease-in-out background-color;
+}
+.submit-picks-button:hover,
+.pick-option label:hover {
+  color: white;
+  background-color: var(--green);
+}
+#top-submit-picks-button {
+  float: right;
+  width: 30%;
+}
+#upcoming-matches-header-div {
+  overflow: hidden;
+}
+#upcoming-matches-header-div h2 {
+  float: left;
+  width: 60%;
+}
+#upcoming-matches-header-div input {
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  min-width: 135px;
+}
+.teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: red; */
+}
+
+.teams p {
+  text-align: center;
+}
+
+.home-team,
+.away-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 5px;
+  width: 150px;
+}
+.name {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.score {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.home-team {
+  /* background-color: blue; */
+}
+
+.away-team {
+  /* background-color: orange; */
+}
+.teams {
+  text-align: center;
+}
+.icon img {
+  height: 50px;
+}
+
+.picks {
+  /* background-color: yellowgreen; */
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.pick-option {
+  /* background-color: green; */
+  text-align: center;
+  margin: 5px 5px;
+  flex-grow: 100;
+}
+
+.pick-option input:checked ~ label {
+  background-color: var(--green);
+  color: white;
+}
+
+.pick-option input {
+  display: none;
+}
+
+.pick-option label {
+  display: flex;
+  padding: 5px;
+  transition: 0.2s ease-in-out background-color;
+  border-radius: 5px;
+  height: 100%;
+  align-items: center;
+  background-color: white;
+  border: 1px solid var(--accent-color);
+}
+
+/* Points table styles*/
+.points-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.points-table tr {
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+.points-table td {
+  padding: 20px 10px;
+}
+.points-table th {
+  text-align: left;
+}
+@media (max-width: 650px) {
+  body {
+    font-size: 14px;
+  }
+  main {
+    padding: 0;
+  }
+  #nav {
+    width: 100%;
+  }
+
+  nav ul li {
+    display: block;
+    float: initial;
+    text-align: center;
+    width: 100%;
+  }
+
+  #nav-bar {
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    height: max-content;
+  }
+
+  #nav-bar ul li {
+    width: 100%;
+    /* take the full width */
+  }
+
+  .nav-item {
+    width: 100%;
+    text-align: left;
+  }
+
+  .topbar {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+  .username-small {
+    float: left;
+    list-style-type: none;
+    padding-right: 4rem;
+  }
+  .username {
+    display: none;
+  }
+  #toggle-button {
+    background-color: transparent;
+    border: 0;
+    display: flex;
+    /* centre the icon */
+    flex-direction: column;
+    justify-content: center;
+    height: 60px;
+    float: right;
+    margin-right: 20px;
+    border-bottom: 4px solid transparent;
+  }
+
+  #toggle-button i {
+    font-size: 25px;
+    /* centre icon */
+    color: white;
+    line-height: 1;
+  }
+  .container {
+    padding: 0 3px;
+  }
+  #upcoming-matches-header-div h2, #upcoming-matches-header-div input {
+    display: block;
+    min-width: 100%;
+
+  }
+}

@@ -1,0 +1,59 @@
+{% extends 'base_generic.html' %}
+{% block content %}
+{% load template_filters %}
+
+<a class="submit-picks-button" id="submit-picks-button" href="{% url 'rugby_tipping:pick' %}"
+  style="text-decoration: none;color: black; font-weight:bold">Edit My Picks →</a>
+
+<h2>Upcoming Matches</h2>
+{%if upcoming_matches %}
+{% for match in upcoming_matches %}
+<div class="match">
+  <div class="teams">
+    <div class="home-team">
+      <div class="icon">
+        <img src="https://crests.football-data.org/{{ match.home_api_sports_id }}.png">
+      </div>
+    </div>
+    <div class="name">{{ match.home_team }}</div>
+    <div>
+      <b>Your Pick:</b> <br>{{ pick_strings|get_item:match.api_sports_id }}
+    </div>
+    <div class="away-team">
+      <div class="icon">
+        <img src="https://crests.football-data.org/{{ match.away_api_sports_id }}.png">
+      </div>
+
+      <div class="name">{{ match.away_team }}</div>
+    </div>
+  </div>
+</div>
+<!-- <p>Correct Pick: {{ match.get_correct_pick_string }}</p> -->
+</div>
+{% endfor %}
+{% endif %}
+<!-- <h2>Leaderboard</h2>
+
+<table class="points-table">
+  <tr>
+    <th>Position</th>
+    <th>Name</th>
+    <th>Points</th>
+  </tr>
+{% for tipper in tippers %}
+<tr>
+  <td>
+    {{ forloop.counter }}
+  </td>
+  <td>
+    {{ tipper.user }}
+  </td>
+  <td>
+    {{ tipper.points }}
+  </td>
+</tr>
+{% endfor %}
+</table> -->
+
+
+{% endblock %}
