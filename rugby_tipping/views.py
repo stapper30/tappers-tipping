@@ -25,7 +25,7 @@ def get_uncompleted_matches_within_week():
         date__lte=datetime.datetime.now() + datetime.timedelta(days=10),
         date__gte=datetime.datetime.now(),
         complete=False,
-    ).order_by("-date")
+    ).order_by("date")
     return q
 
 # Create your views here.
