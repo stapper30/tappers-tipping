@@ -139,6 +139,9 @@ nav ul li {
   float: left;
   margin: 0;
   display: block;
+  background-color: var(--green);
+  border: none;
+  color: white;
   text-decoration: none;
   text-align: left;
   width: fit-content;
