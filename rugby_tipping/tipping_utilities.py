@@ -9,15 +9,14 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-api_key = os.getenv("API_KEY")
-
-
+api_key = os.getenv('API_KEY')
 
 def custom_data_decoder(dataDict):
     return namedtuple('X', dataDict.keys())(*dataDict.values())
 
 def request_api(parameters):
     uri = 'https://api.football-data.org/v4/competitions/PL/matches'
+    print(api_key)
     headers = { 'X-Auth-Token': api_key }
 
     response = requests.get(uri, headers=headers)
@@ -80,12 +79,13 @@ def delete_duplicates():
             
 def update_all_matches():
     parameters = [["id", league_id], ["s", "2024-2025"]]
-    data = request_api("games", parameters)
+    data = request_api(parameters)
     print(data)
-    for match in data.response:
-        print(match)
-        match_from_db=Match.objects.get(api_sports_id=match.id)            
-        update_match(match_from_db, match)
+    print(api_key)
+    # for match in data.matches:
+        # print(match)
+        # match_from_db=Match.objects.get(api_sports_id=match.id)            
+        # update_match(match_from_db, match)
     print('All matches updated')
 
 
