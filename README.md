@@ -3,8 +3,7 @@
 **Football Game Prediction App**  
 A web app built with Django where users can predict football match outcomes and track their predictions over time.
 
-![image](https://github.com/user-attachments/assets/593443b0-0d88-40e6-8104-a8803d5268e7)
-![Screenshot 2025-04-29 002149](https://github.com/user-attachments/assets/e8c9b421-e68f-465d-9657-7dd64d99c3bd)
+![Recording2025-05-28021812-ezgif com-optimize](https://github.com/user-attachments/assets/9f91e478-7cbc-4440-a18a-56642e2b5f9f)
 
 ## Features
 - **User Authentication**: Create an account, log in, and manage predictions securely.
