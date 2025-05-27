@@ -13,10 +13,12 @@ from django.contrib.auth.models import User
 
 def get_completed_matches_within_week():
     q = Match.objects.filter(
-        date__lte=datetime.datetime.now() + datetime.timedelta(days=7),
-        date__gte=datetime.datetime.now() - datetime.timedelta(days=7),
+        date__lte=datetime.datetime.now() + datetime.timedelta(days=10),
+        date__gte=datetime.datetime.now() - datetime.timedelta(days=10),
         complete=True,
     ).order_by("-date")
+    print("hello")
+    print(q)
     return q
 
 
@@ -53,6 +55,11 @@ def index_view(request):
     else:
         return redirect(reverse_lazy("login"))
 
+def landing_view(request):
+    if request.user.is_authenticated:
+        return redirect(reverse_lazy("rugby_tipping:index"))
+    else:
+        return render(request, "rugby_tipping\\landing.html", {"past_matches": get_completed_matches_within_week()})
 
 def picking_view(request):
     if request.user.is_authenticated:

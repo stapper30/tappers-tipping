@@ -83,23 +83,23 @@
                         <div class="name">{{ match.home_team }}</div>
                     </div>
                     <div>
-                        <b>You Picked:</b> <br>{{ pick_strings|get_item:match.api_sports_id }}
-                    </div>
-                    <div class="away-team">
-                        <div class="icon">
-                            <img src="https://crests.football-data.org/{{ match.away_api_sports_id }}.png">
+                            <b>You Picked:</b> <br>{{ pick_strings|get_item:match.api_sports_id }}
                         </div>
-
-                        <div class="score">{{ match.away_score }}
+                        <div class="away-team">
+                            <div class="icon">
+                                <img src="https://crests.football-data.org/{{ match.away_api_sports_id }}.png">
+                            </div>
+                            
+                            <div class="score">{{ match.away_score }}
+                            </div>
+                            <div class="name">{{ match.away_team }}</div>
                         </div>
-                        <div class="name">{{ match.away_team }}</div>
                     </div>
+                    <!-- <p>Correct Pick: {{ match.get_correct_pick_string }}</p> -->
                 </div>
-                <!-- <p>Correct Pick: {{ match.get_correct_pick_string }}</p> -->
             </div>
-        </div>
-        {% endfor %}
-        {% endif %}
+            {% endfor %}        
+            {% endif %}
     </main>
     <div class="container black">
         <footer>

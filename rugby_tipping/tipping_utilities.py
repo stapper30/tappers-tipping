@@ -17,7 +17,7 @@ def custom_data_decoder(dataDict):
 def request_api(parameters):
     uri = 'https://api.football-data.org/v4/competitions/PL/matches'
     print(api_key)
-    headers = { 'X-Auth-Token': api_key }
+    headers = { 'X-Auth-Token': "1117b2eca47a4f62ba43ee7d10b2e2c4" }
 
     response = requests.get(uri, headers=headers)
     data = response.text
@@ -56,6 +56,8 @@ def update_match(match_from_db: Match, match_from_api):
 
     # Determine if the match is complete
     match_from_db.complete = match_from_api.status == 'FINISHED'
+    print(match_from_db.complete)
+    print(match_from_api.status)
 
     # Extract match round and date
     match_from_db.match_round = match_from_api.matchday
@@ -82,10 +84,10 @@ def update_all_matches():
     data = request_api(parameters)
     print(data)
     print(api_key)
-    # for match in data.matches:
-        # print(match)
-        # match_from_db=Match.objects.get(api_sports_id=match.id)            
-        # update_match(match_from_db, match)
+    for match in data.matches:
+        print(match)
+        match_from_db=Match.objects.get(api_sports_id=match.id)            
+        update_match(match_from_db, match)
     print('All matches updated')
 
 

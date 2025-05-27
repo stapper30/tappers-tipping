@@ -19,6 +19,7 @@ from rugby_tipping import views
 app_name = 'rugby_tipping'
 
 urlpatterns = [
+path('', views.landing_view, name='landing'),
 path('app', views.index_view, name='index'),
 path('pick', views.picking_view, name='pick') 
 ]

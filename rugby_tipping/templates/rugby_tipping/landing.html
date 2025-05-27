@@ -7,37 +7,5 @@
 <p>    
     Come back next season for the next round of tipping!
 </p>
-<div id="upcoming-matches-header-div">
-
-  <h2>Upcoming Matches - Next Season coming Aug. 2025</h2>
-  <a class="submit-picks-button" id="top-submit-picks-button" href="{% url 'rugby_tipping:pick' %}"
-    style="text-decoration: none; font-weight:bold">Edit My Picks →</a>
-
-</div>
-{%if upcoming_matches %}
-{% for match in upcoming_matches %}
-<div class="match">
-  <div class="teams">
-    <div class="home-team">
-      <div class="icon">
-        <img src="https://crests.football-data.org/{{ match.home_api_sports_id }}.png">
-      </div>
-    </div>
-    <div class="name">{{ match.home_team }}</div>
-    <div>
-      <b>Your Pick:</b> <br>{{ pick_strings|get_item:match.api_sports_id }}
-    </div>
-    <div class="away-team">
-      <div class="icon">
-        <img src="https://crests.football-data.org/{{ match.away_api_sports_id }}.png">
-      </div>
-
-      <div class="name">{{ match.away_team }}</div>
-    </div>
-  </div>
-</div>
-</div>
-{% endfor %}
-{% endif %}
 
 {% endblock %}
