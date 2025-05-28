@@ -17,7 +17,7 @@ def custom_data_decoder(dataDict):
 def request_api(parameters):
     uri = 'https://api.football-data.org/v4/competitions/PL/matches'
     print(api_key)
-    headers = { 'X-Auth-Token': "1117b2eca47a4f62ba43ee7d10b2e2c4" }
+    headers = { 'X-Auth-Token': api_key }
 
     response = requests.get(uri, headers=headers)
     data = response.text
