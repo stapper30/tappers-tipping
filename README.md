@@ -1,4 +1,4 @@
-# Tappers Tipping - [Site Here](https://stapper30.pythonanywhere.com/)
+# Tappers Tipping
 
 **Football Game Prediction App**  
 A web app built with Django where users can predict football match outcomes and track their predictions over time.
@@ -25,3 +25,8 @@ A web app built with Django where users can predict football match outcomes and 
 ```bash
 git clone https://github.com/yourusername/tappers-tipping.git
 cd tappers-tipping
+```
+
+### 2. Install dependencies using pip
+
+### 3. Run using standard Django commands. 
